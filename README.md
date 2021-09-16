@@ -9,15 +9,14 @@ d10S3/d10S3 is a ✨ special ✨ repository because its `README.md` (this file) 
 You can click the Preview link to take a look at your changes.
 --->
 
-Android Studio Certificate setting
-1.File -> Project Structure 
-터미널에서 JDK location 이동
+- Android Studio Certificate setting
+- 1.File -> Project Structure 터미널에서 JDK location 이동
 
-2. 인증 갱신 시작
-./bin/keytool -importcert -file /my/certificate/path/my.cer -keystore ./lib/security/cacerts -storepass changeit -noprompt
+- 2. 인증 갱신 시작
+- ./bin/keytool -importcert -file /my/certificate/path/my.cer -keystore ./lib/security/cacerts -storepass changeit -noprompt
 
-git terminal
-git status
-git add *
-git commit -m "commit message" upload
-git push -u origin master
+- git terminal
+- git status
+- git add *
+- git commit -m "commit message" upload
+- git push -u origin master

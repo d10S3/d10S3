@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+  
+    <LinearLayout
+        android:id="@+id/layoutMainHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutMainHeaderContainer"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/new_main_header_height"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutLeftSideMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <ImageView
+                    android:id="@+id/imgLeftSideMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginStart="14dp"
+                    android:src="@drawable/rectangle_704_copy_2" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="12dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/imgLeftSideMenu"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/viewHeaderCenter"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:visibility="invisible"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
+                app:layout_constraintStart_toEndOf="@id/layoutLeftSideMenu"
+                app:layout_constraintEnd_toStartOf="@id/viewHeaderCenter"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <ImageView
+                    android:id="@+id/imgMainCI"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/viewCILine"
+                    app:layout_constrainedWidth="true"
+                    android:scaleType="fitEnd"
+                    android:src="@drawable/ci_test5"
+                    android:adjustViewBounds="true"/>
+
+                <View
+                    android:id="@+id/viewCILine"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintStart_toEndOf="@id/imgMainCI"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:visibility="invisible"/>
+
+                <com.sk.benepia.views.menu.dropdown.BenepiaCIDropdownMenu
+                    android:id="@+id/headerDropDownMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tag="header"
+                    android:visibility="invisible"
+                    app:layout_constraintStart_toEndOf="@id/imgMainCI"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:anchorResID="@layout/ci_dropdown_btn"
+                    app:menuResID="@layout/ci_dropdown_menu">
+
+                </com.sk.benepia.views.menu.dropdown.BenepiaCIDropdownMenu>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--<ImageView
+                android:id="@+id/imgMainCI"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                app:layout_constraintStart_toEndOf="@id/layoutLeftSideMenu"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="30dp"
+                android:scaleType="fitStart"
+                android:src="@drawable/ci_test5"
+                android:adjustViewBounds="true"/>
+
+            <com.sk.benepia.views.menu.dropdown.BenepiaCIDropdownMenu
+                android:id="@+id/headerDropDownMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="header"
+                app:layout_constraintStart_toEndOf="@id/imgMainCI"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:anchorResID="@layout/ci_dropdown_btn"
+                app:menuResID="@layout/ci_dropdown_menu">
+
+            </com.sk.benepia.views.menu.dropdown.BenepiaCIDropdownMenu>-->
+
+            <!-- 포인트 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutHeaderPoint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@id/layoutCart"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:clickable="true"
+                android:descendantFocusability="blocksDescendants"
+                >
+
+                <TextView
+                    android:id="@+id/tvHeaderPoint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:gravity="end"
+                    android:text="899,340P"
+                    android:textColor="#1b1b1b"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:includeFontPadding="false"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <!-- 장바구니 이미지 -->
+            <FrameLayout
+                android:id="@+id/layoutCart"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginEnd="12.7dp"
+                android:clickable="true"
+                android:descendantFocusability="blocksDescendants"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginRight="14.7dp"
+                    android:clickable="false"
+                    android:src="@drawable/vector_smart_object" />
+
+                <TextView
+                    android:id="@+id/tvCartCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/ellipse_2"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:padding="2dp"
+                    android:text="0"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold"
+                    android:textSize="11dp" />
+
+            </FrameLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 검색바 -->
+        <RelativeLayout
+            android:id="@+id/layoutSearchParent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutSearch"
+                android:layout_width="346dp"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:clickable="true"
+                android:descendantFocusability="blocksDescendants"
+                android:background="@drawable/main_search_back">
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/main_header_search"
+                    android:layout_marginLeft="20.3dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

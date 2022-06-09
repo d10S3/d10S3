@@ -28,3 +28,20 @@ You can click the Preview link to take a look at your changes.
 - git add *
 - git commit -m "commit message" upload
 - git push -u origin master
+
+// emulator host 변경
+
+첫번째 터미널
+
+1. /Users/owner(사용자계정)/Library/Android/sdk/emulator 이동
+2. ./emulator -avd test(에뮬레이터명) -writable-system
+
+두번째 터미널
+
+1. /Users/owner(사용자계정)/Library/Android/sdk/platform-toos 이동
+2. ./adb devices
+3. ./adb -s emulator-5554 root
+4. ./adb -s emulator-5554 remount
+5. ./adb -s emulator-5554 pull /etc/hosts /Users/owner/Desktop/host(호스트 복사할 경로)
+6.  /Users/owner/Desktop/host/hosts 파일 수정
+7. ./adb -s emulator-554 push  /Users/owner/Desktop/host/hosts /etc/hosts
